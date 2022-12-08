@@ -1,0 +1,4 @@
+[submodule "submodules/foundation"]
+	path = sass/foundation
+	url = https://github.com/foundation/foundation-sites
+	branch = v6.7.4

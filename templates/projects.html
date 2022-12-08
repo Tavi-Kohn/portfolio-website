@@ -1,0 +1,19 @@
+{% extends "default_layout.html" %}
+
+{% block title %}
+Personal Projects
+{% endblock %}
+
+{% block main %}
+{{ section.content | safe}}
+{% for page in section.pages %}
+<section class="grid">
+    <article>
+        {{page.title}}
+        <a href="{{ page.permalink | safe }}">Read Here</a>
+        {{page.slug}} {{page.date | date(format="%B %d, %Y") }}
+    </article>
+</section>
+{% endfor %}
+
+{% endblock %}

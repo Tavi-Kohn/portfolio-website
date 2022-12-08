@@ -1,0 +1,26 @@
+@import "reset";
+@import "theme";
+
+@import "fonts";
+@import "font_awesome";
+@import "typography";
+
+// @import "navigation";
+@import "components";
+@import "layout";
+@import "table";
+@import "link";
+
+// img {
+//   width: 100%
+// }
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}

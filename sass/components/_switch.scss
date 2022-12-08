@@ -1,0 +1,11 @@
+label.switch {
+    position: relative;
+    input {
+        position: absolute;
+    }
+    span.switch-slider {
+        position: absolute;
+        background-color: blue;
+        width: 2rem;
+    }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block head %}
+  <title>{% block title %}Untitled Page{% endblock title %}</title>
+  {#
+  <link rel="stylesheet" href="{{get_url(path='main.css')}}"
+    integrity="sha384-{{ get_file_hash(path='main.css', sha_type=384, base64=true) | safe }}"> #}
+
+  <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
+  {% endblock head %}
+</head>
+
+<body>
+  {% block body %} {% endblock body %}
+  {# <br />Built on <time datetime="{{ now() | safe }}">{{ now() | date(format="%I:%M:%S %p %B %d, %Y")}}</time> #}
+</body>
+
+</html>

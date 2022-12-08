@@ -1,0 +1,13 @@
+{% extends "partials/base.html" %}
+{% block title %}
+Tavi Kohn
+{% endblock title %}
+{% block body %}
+{% include "partials/header.html" %}
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+{% include "partials/sidebar.html" %}
+{% include "partials/footer.html" %}
+{% endblock body %}
