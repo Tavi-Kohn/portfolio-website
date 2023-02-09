@@ -17,7 +17,15 @@
 
 <body>
   {% block body %} {% endblock body %}
+  <button class="btn btn-primary">Button Text</button>
   {# <br />Built on <time datetime="{{ now() | safe }}">{{ now() | date(format="%I:%M:%S %p %B %d, %Y")}}</time> #}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  {#
+  <script src="{{get_url(path='setTheme.js')}}"
+    integrity="sha384-{{ get_file_hash(path='setTheme.js', sha_type=384, base64=true) | safe }}"></script> #}
+  {# <script src="{{get_url(path='setTheme.js')}}"></script> #}
 </body>
 
 </html>
