@@ -1,0 +1,27 @@
+<article class="card">
+  {% if page.image %}
+  <img class="card-img-top" src="{{get_url(path=page.image)}}" />
+  {% endif %}
+  <div class="card-body">
+    <h4 class="card-title">{{page.title}}</h4>
+    <p class="card-subtitle text-muted">
+      {{page.date | date(format="%B %d, %Y") }}
+    </p>
+
+    {% if page.description %}
+    <p class="card-text">{{page.description}}</p>
+    {%else%}
+    <p class="card-text">This project does not have a description</p>
+    {% endif %}
+
+    {# {% if page.summary %}
+    <p class="card-text">{{page.summary | safe}}</p>
+    {% endif %} #}
+    
+    {# {{page.slug}} #}
+    {# <br> #}
+    <a class="btn btn-primary" href="{{ page.permalink | safe }}"
+      >Read More <i class="bi-arrow-right"></i
+    ></a>
+  </div>
+</article>

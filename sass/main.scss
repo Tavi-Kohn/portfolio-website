@@ -2,8 +2,16 @@
 @import "bootstrap";
 @import "bootstrap-icons";
 
+// Fix the size of the main logo and have it inherit the current color
 svg.logo {
   fill: currentColor;
   width: 2rem;
   height: 2rem;
+}
+
+// Make all headings use the display font instead of the body font
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--bs-display-font-family);
+    font-weight: var(--bs-display-font-weight);
+    font-style: var(--bs-display-font-style);
 }

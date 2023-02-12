@@ -3,6 +3,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "bootstrap-theme/modifications.scss";
 
+:root {
+    --#{$prefix}display-font-family: #{$display-font-family};
+    --#{$prefix}display-font-style: #{$display-font-style};
+    --#{$prefix}display-font-weight: #{$display-font-weight};
+}
+
 // @import "../node_modules/bootstrap/scss/functions";
 
 // @import "bootstrap-theme";

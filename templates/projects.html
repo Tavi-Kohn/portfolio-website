@@ -8,11 +8,12 @@ Personal Projects
 {{ section.content | safe}}
 {% for page in section.pages %}
 <section class="grid">
-    <article>
+    {# <article>
         {{page.title}}
         <a href="{{ page.permalink | safe }}">Read Here</a>
         {{page.slug}} {{page.date | date(format="%B %d, %Y") }}
-    </article>
+    </article> #}
+    {%include "partials/project_preview.html" %}
 </section>
 {% endfor %}
 
