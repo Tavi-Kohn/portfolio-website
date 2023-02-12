@@ -1,26 +1,60 @@
-<header class="navbar">
-  <div class="container">
-    <a class="brand" href="{{ get_url(path='/') }}">
-      <svg>
-        {{ load_data (path='content/Logo Prototype 2.svg') | safe}}
-      </svg>
-      {# <svg width="30"
-      height="30">
-      <image xlink:href="{{ get_url(path='Logo Prototype 2.svg') }}" width="30"
-      height="30"/>
-    </svg> #}
-      <h1>Tavi Kohn</h1>
-    </a>
-    <nav>
-      <ul>
-        <li>
-          <a href="{{ get_url(path='/') }}">Home</a>
-        </li>
-        <li>
-          <a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a>
-        </li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<header>
+  {# TODO use nav component instead of navbar for better customization #}
+  <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <div class="container-fluid">
+      <a
+        class="navbar-brand text-primary d-flex align-items-center"
+        href="{{ get_url(path='/') }}"
+      >
+        <svg class="logo">
+          {{ load_data (path='content/Logo Prototype 2.svg') | safe}}
+        </svg>
+        <span class="display-6">Tavi Kohn</span></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="bi-list"></i>
+      </button>
+
+      <div id="navbarSupportedContent" class="navbar-collapse collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="{{ get_url(path='@/projects/_index.md') }}"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://about.tavi.fyi">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+      </div>
+      <button class="btn btn-outline-secondary" data-bs-theme-value="dark">
+        <i class="bi-moon"></i>
+      </button>
+      <button class="btn btn-outline-secondary" data-bs-theme-value="light">
+        <i class="bi-sun"></i>
+      </button>
+      <button class="btn btn-outline-secondary" data-bs-theme-value="auto">
+        <i class="bi-gear"></i>
+      </button>
+    </div>
+  </nav>
 </header>

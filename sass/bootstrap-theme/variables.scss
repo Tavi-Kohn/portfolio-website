@@ -1,0 +1,18 @@
+@import "../../node_modules/bootstrap/scss/functions";
+$primary: #ff610c;
+$border-radius: 2px;
+$font-family-display: "Bitter", sans-serif;
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+$font-family-monospace: "JetBrains Mono", monospace;
+// stylelint-enable value-keyword-case
+// $font-family-base: var(--#{$prefix}font-body);
+
+$display-font-family: $font-family-display;
+$display-font-style:  null;
+$display-font-weight: 700;
+
+// $spacer: 1.25rem;
+@import "../../node_modules/bootstrap/scss/variables";
+// $enable-rounded: false;
+
+@import "../../node_modules/bootstrap/scss/variables-dark";

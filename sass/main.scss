@@ -1,2 +1,9 @@
-@import 'fonts';
-@import 'bootstrap';
+@import "fonts";
+@import "bootstrap";
+@import "bootstrap-icons";
+
+svg.logo {
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem;
+}
