@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
 $white: #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
@@ -9,3 +11,29 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
+
+$primary: #ff610c;
+// $primary: #01f161;
+// $secondary: shade-color($primary, 30%);
+$secondary: $gray-600;
+
+// $primary-100: tint-color($primary, 80%);
+// $primary-200: tint-color($primary, 60%);
+// $primary-300: tint-color($primary, 40%);
+// $primary-400: tint-color($primary, 20%);
+// $primary-500: $primary;
+// $primary-600: shade-color($primary, 20%);
+// $primary-700: shade-color($primary, 40%);
+// $primary-800: shade-color($primary, 60%);
+// $primary-900: shade-color($primary, 80%);
+
+
+// $secondary-100: tint-color($secondary, 80%);
+// $secondary-200: tint-color($secondary, 60%);
+// $secondary-300: tint-color($secondary, 40%);
+// $secondary-400: tint-color($secondary, 20%);
+// $secondary-500: $secondary;
+// $secondary-600: shade-color($secondary, 20%);
+// $secondary-700: shade-color($secondary, 40%);
+// $secondary-800: shade-color($secondary, 60%);
+// $secondary-900: shade-color($secondary, 80%);

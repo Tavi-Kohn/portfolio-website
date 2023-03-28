@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+// Adjust icons inside of buttons
+.btn i {
+  vertical-align: middle;
+}
+
+// .logo {}
+
+// TODO decide on blockquote styling
+blockquote {
+  border-left: 0.25rem solid var(--bs-secondary-color);
+  padding-left: 0.5rem;
+}
+
+// Add language label to code blocks
+pre[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
+  text-align: end;
+  margin-bottom: -1rem;
+  color: var(--bs-body-color);
+}
+
+// syntax highlighted code blocks
+pre[data-lang] {
+  tab-size: 4;
+  border-radius: var(--bs-border-radius);
+  border: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
+  padding: 1rem;
+}
+
+// Draw dropdowns inside of a navbar above other elements
+.navbar .dropdown {
+  z-index: $zindex-offcanvas + 1;
+}
+
+
+// code {
+//   border-radius: var(--bs-border-radius);
+//   border: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
+// }

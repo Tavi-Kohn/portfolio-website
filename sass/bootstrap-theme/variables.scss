@@ -1,18 +1,25 @@
+@import "palette";
 @import "../../node_modules/bootstrap/scss/functions";
-$primary: #ff610c;
+
+// Bootstrap settings
+$enable-grid-classes: true;
+$enable-gradients: true;
+$enable-rounded: true;
+
+$gradient: linear-gradient(-60deg, rgba(#888, 0.15), rgba(#888, 0));
+
 $border-radius: 2px;
+// $contrast-ratio: 4.5;
 $font-family-display: "Bitter", sans-serif;
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
 $font-family-monospace: "JetBrains Mono", monospace;
-// stylelint-enable value-keyword-case
-// $font-family-base: var(--#{$prefix}font-body);
 
 $display-font-family: $font-family-display;
-$display-font-style:  null;
+$display-font-style: null;
 $display-font-weight: 700;
 
-// $spacer: 1.25rem;
-@import "../../node_modules/bootstrap/scss/variables";
-// $enable-rounded: false;
+// $link-shade-percentage: 20;
+// $spacer: 1rem;
 
+@import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";

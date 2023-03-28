@@ -1,0 +1,24 @@
+<div id="navbarSupportedContent" class="navbar-collapse collapse">
+  {# Branding #}
+  <a
+    class="navbar-brand text-primary d-flex align-items-center"
+    href="{{ get_url(path='/') }}"
+  >
+    {% include "partials/header/branding.html" %}
+  </a>
+
+  {# First half of navbar #}
+  <ul class="navbar-nav me-auto">
+    {%include "partials/header/navigation/links.html" %}
+  </ul>
+
+  {# Second half of navbar #}
+  <ul class="navbar-nav">
+    <li class="nav-item me-2">
+      {% include "partials/header/navigation/search.html" %}
+    </li>
+    <li class="nav-item">
+      {% include "partials/header/theme_switcher.html" %}
+    </li>
+  </ul>
+</div>

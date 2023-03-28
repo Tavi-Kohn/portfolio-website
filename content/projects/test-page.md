@@ -1,6 +1,7 @@
 +++
 title = "Test Page"
 date = "2022-06-25"
+description = "A test page with a lot of markdown syntax features"
 +++
 
 ## Why
@@ -26,7 +27,7 @@ This heading should show up differently in the table of contents
 
 ## Code Block
 
-```c
+```C
 int main(int argc, char** argv) {
     return argv->x;
 }

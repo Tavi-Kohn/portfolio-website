@@ -6,15 +6,16 @@ Personal Projects
 
 {% block main %}
 {{ section.content | safe}}
+<section class="row">
 {% for page in section.pages %}
-<section class="grid">
     {# <article>
         {{page.title}}
         <a href="{{ page.permalink | safe }}">Read Here</a>
         {{page.slug}} {{page.date | date(format="%B %d, %Y") }}
     </article> #}
     {%include "partials/project_preview.html" %}
-</section>
 {% endfor %}
+{# <pre><code>{{ __tera_context | striptags }}</code></pre> #}
+</section>
 
 {% endblock %}
