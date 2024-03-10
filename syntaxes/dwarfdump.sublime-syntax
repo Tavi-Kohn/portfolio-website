@@ -1,0 +1,116 @@
+%YAML 1.2
+---
+name: dwarfdump
+file_extensions: [dwarfdump]
+# scope: text.dwarfdump
+scope: comment.dwarfdump
+version: 2
+
+variables:
+  num_hex: \h+
+  num_dec: \d+
+  dw_attr: DW_AT_\w+
+  dw_tag: DW_TAG_\w+
+  # offset_hex: (<)({{num_hex}})(>)
+  # depth_dec: (<)({{num_dec}})(>)
+  ptr_hex: <(0x{{num_hex}})>
+  entry_tag: '^\s*(<{{num_dec}}>)(<{{num_hex}}>):\s+.*\s+({{num_dec}})\s+\(({{dw_tag}})\)$'
+  entry_attribute: '^\s*(<{{num_hex}}>)\s+({{dw_attr}})\s*: '
+
+contexts:
+  main:
+    - match: '{{entry_tag}}'
+      captures:
+        # 1: markup.heading.dwarfdump
+        2: entity.other.attribute-name.dwarfdump
+        3: constant.numeric.dwarfdump
+        4: support.type.dwarfdump
+    - match: "{{entry_attribute}}"
+      captures:
+        1: entity.other.attribute-name.dwarfdump
+        2: support.constant.dwarfdump
+      push: attribute-value
+    - match: '^.*'
+      scope: invalid
+
+  attribute-value:
+    - match: '\(.*offset: (0x{{num_hex}})\):\s+(\w+)'
+      captures:
+        1: constant.numeric.dwarfdump
+        2: string.unquoted.dwarfdump
+    - match: '({{num_dec}})\s+\((\w+)\)'
+      captures:
+        1: constant.numeric.dwarfdump
+        2: support.constant.dwarfdump
+    - match: '{{num_dec}}'
+      scope: constant.numeric.dwarfdump
+    - match: '{{ptr_hex}}'
+      scope: variable.parameter.dwarfdump
+    - match: '\w+'
+      scope: string.unquoted.dwarfdump
+    - match: .*$
+      scope: invalid
+      pop: true
+
+    # - match: '{{dw_attr}}'
+    #   scope: constant.other.dwarfdump
+    # - match: '{{dw_tag}}'
+    #   scope: support.type.dwarfdump
+    # - match: '{{depth_dec}}'
+    #   captures:
+    #     2: markup.heading.dwarfdump
+
+    # - match: '{{ptr_hex}}'
+    #   captures:
+    #     2: variable.parameter
+    # - match: '{{num_dec}}'
+    #   scope: constant.numeric
+    # - match: '{{offset_hex}}'
+    #   captures:
+    #     2: comment.dwarfdump
+    # - match: (\()(.*)(\))
+    #   captures:
+    #     2: comment.dwarfdump
+    # scope: constant.dwarfdump
+    # scope: text.dwarfdump
+#     - include: structure
+#     - include: pointer
+#     - include: variable
+#     - include: attr-address
+#     - include: attr-file-offset
+#     - include: attr-number
+
+#   structure:
+#     - match: "DW_TAG_structure_type"
+#       scope: keyword.declaration.struct
+
+#   pointer:
+#     - match: "DW_TAG_pointer_type"
+#       scope: constant.other
+
+#   variable:
+#     - match: "DW_TAG_variable"
+#       scope: variable
+
+#   attr-file-offset:
+#     - match: <\h+>
+#       scope: constant.numeric
+#   tag-separator:
+#     - match: ":\\s+"
+#       scope: punctuation.separator
+
+#   attr-address:
+#     - match: <0x\h+>
+#       scope: constant.numeric.pointer
+
+#   attr-number:
+#     - match: :\s+\d+\b
+#       scope: constant.numeric
+#   # attr-number:
+#   #   - match: (:?:\s+)(\d+)
+#   #   - captures:
+#   #     1: constant.numeric
+
+#   # punctuation-begin:
+#   #   - match: "<"
+#   #     scope:

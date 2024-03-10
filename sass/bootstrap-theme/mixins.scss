@@ -1,0 +1,10 @@
+$noise-overlay: url('/noiseOverlay.svg');
+
+@mixin gradient-bg($color: null) {
+  background-color: $color;
+
+  @if $enable-gradients {
+    background-image: $noise-overlay, var(--#{$prefix}gradient);
+    background-repeat: repeat, no-repeat;
+  }
+}

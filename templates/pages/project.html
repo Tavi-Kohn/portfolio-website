@@ -4,16 +4,26 @@
 {% endblock%}
 
 {% block main %}
+{# <div class="row">
+    {% if page.higher %}
+    <div class="col">
+        Previous Project
+        <a href="{{page.higher.permalink | safe}}">{{page.higher.title}}</a>
+    </div>
+    {% endif %}
+    {% if page.lower %}
+        <div class="col">
+            Next Project
+            <a href="{{page.lower.permalink | safe}}">{{page.lower.title}}</a>
+        </div>
+    {% endif %}
+</div> #}
 
-<h1 id="title">{{page.title}}</h1>
+<h1 id="title" class="">{{page.title}}</h1>
+
 {% include "partials/reading_time.html" %}
-{% if page.earlier %}
-<div>
-    Previous Project
-    <a href="{{page.earlier.permalink | safe}}">{{page.earlier.title}}
-</div>
-{% endif %}
-{# <div>lower {{page.earlier}} higher {{page.later}}</div> #}
 {% include "partials/table_of_contents.html" %}
+
 {{page.content | safe }}
+
 {% endblock main %}

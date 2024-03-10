@@ -1,7 +1,7 @@
-{% if page.toc %}
+{% if page.toc and page.toc | length >= 3 %}
 <div {# TODO make this a box of some kind#}>
     <ul>
-        {% for h2 in page.toc%}
+        {% for h2 in page.toc %}
         <li>
             <a href="{{h2.permalink | safe}}">{{h2.title}}</a>
         </li>

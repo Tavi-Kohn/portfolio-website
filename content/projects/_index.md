@@ -4,8 +4,8 @@ sort_by = "date"
 template = "projects.html"
 page_template = "pages/project.html"
 +++
+<!-- markdownlint-disable-next-line single-title -->
+# Personal Projects
 
-## Personal Projects
-
-There's nothing to see here really, maybe a future version will have a
-description of the actual projects written into this markdown document.
+My personal projects are how I explore and learn new things. Working on my
+projects helps me discover new interests and apply my wide variety of skills.

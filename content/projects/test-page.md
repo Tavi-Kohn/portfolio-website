@@ -1,7 +1,6 @@
 +++
 title = "Test Page"
 date = "2022-06-25"
-description = "A test page with a lot of markdown syntax features"
 +++
 
 ## Why

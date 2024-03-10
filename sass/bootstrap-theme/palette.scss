@@ -13,9 +13,11 @@ $gray-900: #212529;
 $black: #000;
 
 $primary: #ff610c;
+// $primary: rgb(12, 109, 69);
 // $primary: #01f161;
 // $secondary: shade-color($primary, 30%);
-$secondary: $gray-600;
+$secondary: tint-color($primary, 30%);
+// $secondary: $gray-600;
 
 // $primary-100: tint-color($primary, 80%);
 // $primary-200: tint-color($primary, 60%);

@@ -9,34 +9,62 @@
 
 // TODO decide on blockquote styling
 blockquote {
-  border-left: 0.25rem solid var(--bs-secondary-color);
+  @extend .blockquote;
+  border-left: var(--bs-border-width) solid var(--bs-border-color);
   padding-left: 0.5rem;
 }
 
-// Add language label to code blocks
-pre[data-lang]::before {
-  content: attr(data-lang);
-  display: block;
-  text-align: end;
-  margin-bottom: -1rem;
-  color: var(--bs-body-color);
+figure {
+  @extend .figure;
 }
 
-// syntax highlighted code blocks
-pre[data-lang] {
+figure > img {
+  @extend .figure-img;
+}
+
+figure > figcaption {
+  @extend .figure-caption;
+}
+
+table {
+  @extend .table;
+}
+
+img {
+  @extend .img-fluid;
+}
+
+// Code blocks
+pre {
   tab-size: 4;
   border-radius: var(--bs-border-radius);
   border: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
   padding: 1rem;
 }
 
-// Draw dropdowns inside of a navbar above other elements
-.navbar .dropdown {
-  z-index: $zindex-offcanvas + 1;
+// Add language label to code blocks
+pre[data-lang]::before {
+  // content: "lang: " attr(data-lang);
+  content: attr(data-lang);
+  display: block;
+  text-align: end;
+  margin-bottom: -1.5em;
+  color: var(--bs-body-color);
 }
 
+// Hide language labels on hover
+pre[data-lang]:hover::before {
+  opacity: 0;
+}
 
-// code {
-//   border-radius: var(--bs-border-radius);
-//   border: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
+pre[data-lang=mermaid]::before,
+pre[data-lang=text]::before,
+pre[data-lang=txt]::before
+{
+  content: '';
+  margin-bottom: 0;
+}
+
+// body {
+//   background-image: url('/blueNoiseOverlay.svg');
 // }

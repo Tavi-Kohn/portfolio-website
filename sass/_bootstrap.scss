@@ -1,6 +1,8 @@
 // @import "bootstrap-theme/variables-light.scss";
 @import "bootstrap-theme/variables.scss";
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap-pre-mixins.scss";
+@import "bootstrap-theme/mixins.scss";
+@import "bootstrap-post-mixins.scss";
 @import "bootstrap-theme/modifications.scss";
 
 :root {

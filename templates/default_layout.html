@@ -1,13 +1,14 @@
 {% extends "partials/base.html" %}
-{% block title %}
-Tavi Kohn
-{% endblock title %}
+{% block title %} Tavi Kohn {% endblock title %}
 {% block body %}
 {% include "partials/header.html" %}
-<main class="container">
-    {% block main %}
-    {% endblock main %}
+<main class="container-md p-4">
+  <div class="row justify-content-center">
+    <div class="col col-lg-10 col-xl-8">
+      {% block main %} {% endblock main %}
+    </div>
+  </div>
 </main>
 {% include "partials/sidebar.html" %}
 {% include "partials/footer.html" %}
-{% endblock body %}
+{%endblock body %}

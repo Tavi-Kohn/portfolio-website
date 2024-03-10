@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {# TODO fix favicon failing to load if it is in /content instead of /static
+    #} {# {% set icon_meta = get_image_metadata(path='Logo Prototype 2.svg') %}
+    #} {# {% set icon = resize_image(path='Logo Prototype 2.svg', width=32,
+    height=32) %} #}
     <link
       rel="icon"
       href="{{get_url(path='Logo Prototype 2.svg') | safe }}"
@@ -15,36 +19,80 @@
     <link
       rel="stylesheet"
       href="{{get_url(path='main.css')}}"
-      integrity="sha384-{{ get_file_hash(path='main.css', sha_type=384, base64=true) | safe }}"
+      integrity="sha384-{{ get_hash(path='main.css', sha_type=384, base64=true) | safe }}"
     />
     #}
 
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
-    {% endblock head %}
-  </head>
-
-  <body>
-    {% block body %} {% endblock body %}
-    {# <br />Built on
-    <time datetime="{{ now() | safe }}"
-      >{{ now() | date(format="%I:%M:%S %p %B %d, %Y")}}</time
-    > #}
-
     <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
 
     <script
+    defer
+    type="module"
+    src="{{get_url(path='/mermaidCodeBlocks.js')}}"
+    {# integrity="sha384-{{ get_hash(path='/mermaidCodeBlocks.js', sha_type=384, base64=true) | safe }}" #}
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      defer
       src="{{get_url(path='setTheme.js')}}"
-      integrity="sha384-{{ get_file_hash(path='setTheme.js', sha_type=384, base64=true) | safe }}"
+      integrity="sha384-{{ get_hash(path='setTheme.js', sha_type=384, base64=true) | safe }}"
       crossorigin="anonymous"
     ></script>
     <script
+      defer
       src="{{get_url(path='toggleNavbar.js')}}"
-      integrity="sha384-{{ get_file_hash(path='toggleNavbar.js', sha_type=384, base64=true) | safe }}"
+      integrity="sha384-{{ get_hash(path='toggleNavbar.js', sha_type=384, base64=true) | safe }}"
       crossorigin="anonymous"
     ></script>
+
+    <script src=" https://cdn.jsdelivr.net/npm/elasticlunr/elasticlunr.min.js "></script>
+
+    <script
+      defer
+      src="{{get_url(path='search_index.en.js')}}"
+      {#
+      integrity="sha384-{{ get_hash(path='search_index.en.js', sha_type=384, base64=true) | safe }}"
+      #}
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      defer
+      src="{{get_url(path='search.js')}}"
+      {#
+      integrity="sha384-{{ get_hash(path='search.js', sha_type=384, base64=true) | safe }}"
+      #}
+      crossorigin="anonymous"
+    ></script>
+
+    {#
+    <script
+      defer
+      src="{{get_url(path='blockQuoteFixup.js')}}"
+      integrity="sha384-{{ get_hash(path='blockQuoteFixup.js', sha_type=384, base64=true) | safe }}"
+      crossorigin="anonymous"
+    ></script>
+    #}
+    {% endblock head %}
+  </head>
+
+  <body>
+    {# {{load_data(path='noise.svg') | safe }} #}
+    {% block body %}
+    {% endblock body %}
+    {#
+    <br />
+    Built on
+    <time datetime="{{ now() | safe }}">
+      {{ now() | date(format="%I:%M:%S %p %B %d, %Y")}}
+      </time>
+    #}
   </body>
 </html>
