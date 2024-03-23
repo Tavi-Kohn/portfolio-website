@@ -1,0 +1,6 @@
+// TODO decide on blockquote styling
+blockquote {
+  @extend .blockquote;
+  border-left: var(--bs-border-width) solid var(--bs-border-color);
+  padding-left: 0.5rem;
+}

@@ -1,0 +1,7 @@
+img {
+  @extend .img-fluid;
+}
+
+figure > img {
+  @extend .figure-img;
+}

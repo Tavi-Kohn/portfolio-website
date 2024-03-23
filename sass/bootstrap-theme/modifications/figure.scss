@@ -1,0 +1,8 @@
+figure {
+  @extend .figure;
+  @extend .mx-auto;
+}
+
+figure > figcaption {
+  @extend .figure-caption;
+}

@@ -1,0 +1,29 @@
+pre {
+  tab-size: 4;
+  border-radius: var(--bs-border-radius);
+  border: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
+  padding: 1rem;
+}
+
+// Break ligatures and contextual alternates with a zero width space, to avoid syntax highlighting errors
+pre[data-lang] span::before {
+  content: "\200B";
+}
+
+// Add language label to code blocks
+pre[data-lang]::before {
+  display: block;
+  // content: "lang: " attr(data-lang);
+  content: attr(data-lang);
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  // margin-bottom: -1.5em;
+  color: var(--bs-secondary-color);
+  border-bottom: 1px solid var(--bs-secondary-color);
+}
+
+pre[data-lang="mermaid"]::before,
+pre[data-lang="text"]::before,
+pre[data-lang="txt"]::before {
+  display: none;
+}
