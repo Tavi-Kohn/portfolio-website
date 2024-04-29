@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 @import "modifications/button";
 @import "modifications/blockquote";
@@ -6,6 +7,7 @@
 @import "modifications/figure";
 @import "modifications/image";
 @import "modifications/table";
+@import "modifications/search";
 
 // body {
 //   background-image: url('/blueNoiseOverlay.svg');

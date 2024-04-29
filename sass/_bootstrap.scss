@@ -1,9 +1,9 @@
 // @import "bootstrap-theme/variables-light.scss";
-@import "bootstrap-theme/variables.scss";
-@import "bootstrap-pre-mixins.scss";
-@import "bootstrap-theme/mixins.scss";
-@import "bootstrap-post-mixins.scss";
-@import "bootstrap-theme/modifications.scss";
+@import "bootstrap-theme/variables";
+@import "bootstrap-pre-mixins";
+@import "bootstrap-theme/mixins";
+@import "bootstrap-post-mixins";
+@import "bootstrap-theme/modifications";
 
 :root {
     --#{$prefix}display-font-family: #{$display-font-family};

@@ -1,7 +1,7 @@
 +++
 title = "MIDI Marimba"
 date = "2022-09-24"
-description = "Simulating a physical instrument with a cheaper hardware device and digital sampling"
+description = "Simulating a physical instrument using a hardware device and digital sampling"
 +++
 
 ## What

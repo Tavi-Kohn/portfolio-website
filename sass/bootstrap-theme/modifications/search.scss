@@ -1,0 +1,30 @@
+@import "../../bootstrap-pre-mixins";
+
+// *:has(> #primarySearchInput) {
+.search-results-container {
+  position: relative;
+  //   display: flex;
+}
+.search-results-container:not(:focus-within) {
+    .search-results {
+        display: none;
+    }
+}
+
+.search-results {
+  position: relative;
+}
+
+@include media-breakpoint-up(sm) {
+  .search-results {
+    position: absolute;
+    top: add(100%, 0.5rem);
+    left: 0;
+    right: 0;
+  }
+}
+
+// .navbar-collapse.show #primarySearchResults,
+// .navbar-collapse.collapsing #primarySearchResults {
+//   position: relative;
+// }

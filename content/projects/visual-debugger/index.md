@@ -33,7 +33,6 @@ public class Main {
 ```
 
 {{ captioned_image(caption="IntelliJ Debugger view of the demo program", src="Java Debugger Demo.png") }}
-</figure>
 
 ```C
 struct Demo {
@@ -128,7 +127,6 @@ type recorded.
 ```
 
 ```mermaid
-
 classDiagram
     direction LR
     int

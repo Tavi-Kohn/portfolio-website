@@ -7,6 +7,8 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+# taxonomies = [{ name = "tags", feed = false }]
+
 [markdown]
 highlight_code = true
 render_emoji = true
@@ -25,6 +27,7 @@ highlight_theme = "monokai"
 # highlight_theme = "nyx-bold"
 
 [search]
+index_format = "elasticlunr_json"
 # Whether to include the title of the page/section in the index
 include_title = true
 # Whether to include the description of the page/section in the index
